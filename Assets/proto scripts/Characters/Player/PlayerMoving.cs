@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerMoving : MonoBehaviour
 {
     [SerializeField] float speed;
-    // Start is called before the first frame update
+    Rigidbody2D rb;
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -19,6 +19,6 @@ public class PlayerMoving : MonoBehaviour
 
     public void Move(Vector2 direction)
     {
-        transform.Translate(direction * speed * Time.deltaTime);
+        rb.velocity = direction * speed * Time.deltaTime;
     }
 }

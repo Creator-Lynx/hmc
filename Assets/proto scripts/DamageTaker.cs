@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class DamageTaker : MonoBehaviour
 {
-    int hitPoints = 1;
-    public void TakeDamage(int damage)
+    [SerializeField] int hitPoints = 1;
+    [SerializeField] Type takerType;
+    public void TakeDamage(int damage, Type type)
     {
-        hitPoints -= damage;
-        if (hitPoints <= 0)
+        if (takerType == type)
         {
-            Destroy(gameObject);
+            hitPoints -= damage;
+            if (hitPoints <= 0)
+            {
+                if (gameObject.CompareTag("Player")) LevelController.instance.Lose();
+                if (gameObject.CompareTag("Enemy")) LevelController.instance.DecreasScore();
+                Destroy(gameObject);
+            }
         }
+
+    }
+
+    public enum Type
+    {
+        player,
+        enemy
     }
 }

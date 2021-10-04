@@ -15,11 +15,12 @@ public class PlayerControl : MonoBehaviour
     void FixedUpdate()
     {
         _playerMoving.Move(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
+        _playerMoving.Move(new Vector2(JoystickInput.GetHorizontalAxis(), JoystickInput.GetVerticalAxis()));
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || JoystickInput.GetFire())
+        if (Input.GetKeyDown(KeyCode.Space) || FireInput.GetFireInput())
         {
             _playerShooting.Shoot();
         }

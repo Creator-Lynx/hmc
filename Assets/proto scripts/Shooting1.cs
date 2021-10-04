@@ -2,18 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shooting : MonoBehaviour
+public class Shooting1 : MonoBehaviour
 {
-    [SerializeField] float shootingRange = 5f;
+    [SerializeField] float shootingRange = 6f;
     Collider2D[] enemies;
-    Collider2D closerEnemy;
+    [SerializeField] Collider2D closerEnemy;
 
     [SerializeField] GameObject bulletPrefab;
-
+    bool readyToShoot = true;
+    void Start()
+    {
+        closerEnemy = GameObject.FindGameObjectWithTag("Player").GetComponent<Collider2D>();
+    }
     void Update()
     {
-        GetEnemies();
+        if (readyToShoot)
+        {
+            Shoot();
+        }
+        //GetEnemies();
         Rotate();
+    }
+
+    IEnumerator ShootDelay()
+    {
+        yield return new WaitForSeconds(0.7f);
+        readyToShoot = true;
     }
 
     void Rotate()
@@ -44,13 +58,18 @@ public class Shooting : MonoBehaviour
 
     public void Shoot()
     {
+
         if (closerEnemy != null)
         {
-            // RaycastHit2D hitInfo =
-            //Physics2D.Raycast(transform.position,
-            //(closerEnemy.transform.position - transform.position).normalized, 10f);
-            //if (hitInfo.collider.CompareTag("Enemy"))
+            RaycastHit2D hitInfo =
+            Physics2D.Raycast(transform.position +
+            (closerEnemy.transform.position - transform.position).normalized,
+            (closerEnemy.transform.position - transform.position).normalized, 10f);
+            Debug.Log(hitInfo.collider.name);
+            if (hitInfo.collider.CompareTag("Player"))
             {
+                readyToShoot = false;
+                StartCoroutine(ShootDelay());
                 CreateBullet((closerEnemy.transform.position - transform.position).normalized);
             }
         }
@@ -62,6 +81,6 @@ public class Shooting : MonoBehaviour
     void CreateBullet(Vector2 direction)
     {
         GameObject currentBullet = Instantiate(bulletPrefab, transform.position + (Vector3)direction, Quaternion.identity);
-        currentBullet.GetComponent<BulletBehavior>().SetDirection(direction, DamageTaker.Type.enemy);
+        currentBullet.GetComponent<BulletBehavior>().SetDirection(direction, DamageTaker.Type.player);
     }
 }
