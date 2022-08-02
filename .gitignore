@@ -13,6 +13,14 @@
 /[Aa]ssets/**/*.meta
 *.meta
 
+
+# MemoryCaptures can get excessive in size.
+# They also could contain extremely sensitive data
+/[Mm]emoryCaptures/
+
+# Recordings can get excessive in size
+/[Rr]ecordings/
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
@@ -24,6 +32,7 @@
 
 # Visual Studio cache directory
 .vs/
+/.vscode/
 
 # Gradle cache directory
 .gradle/
@@ -56,8 +65,28 @@ sysinfo.txt
 
 # Builds
 *.apk
+*.aab
 *.unitypackage
+*.app
+
 
 # Crashlytics generated file
 crashlytics-build.properties
+
+
+# Exceptions
+!*.dll
+!*.obj
+
+
+# Packed Addressables
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+
+# Temporary auto-generated Android Assets
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Obsidian generated files
+/.obsidian/
+Docs/.obsidian/
 
