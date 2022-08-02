@@ -12,6 +12,7 @@
 /.vscode/
 /[Aa]ssets/**/*.meta
 *.meta
+/[Uu]ser[Ss]ettings/
 
 
 # MemoryCaptures can get excessive in size.
