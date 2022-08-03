@@ -65,13 +65,14 @@ public class Shooting1 : MonoBehaviour
             Physics2D.Raycast(transform.position +
             (closerEnemy.transform.position - transform.position).normalized,
             (closerEnemy.transform.position - transform.position).normalized, 10f);
-            Debug.Log(hitInfo.collider.name);
-            if (hitInfo.collider.CompareTag("Player"))
-            {
-                readyToShoot = false;
-                StartCoroutine(ShootDelay());
-                CreateBullet((closerEnemy.transform.position - transform.position).normalized);
-            }
+            //Debug.Log(hitInfo.collider.name);
+            if (hitInfo.collider != null)
+                if (hitInfo.collider.CompareTag("Player"))
+                {
+                    readyToShoot = false;
+                    StartCoroutine(ShootDelay());
+                    CreateBullet((closerEnemy.transform.position - transform.position).normalized);
+                }
         }
         else
         {

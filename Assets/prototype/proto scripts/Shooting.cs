@@ -6,9 +6,10 @@ public class Shooting : MonoBehaviour
 {
     [SerializeField] float shootingRange = 5f;
     Collider2D[] enemies;
-    Collider2D closerEnemy;
+    Collider2D closerEnemy = null;
 
     [SerializeField] GameObject bulletPrefab;
+    [SerializeField] Transform top;
 
     void Update()
     {
@@ -18,7 +19,19 @@ public class Shooting : MonoBehaviour
 
     void Rotate()
     {
-
+        if (closerEnemy != null)
+        {
+            Vector3 direction = (closerEnemy.transform.position - transform.position).normalized;
+            float angle = Vector3.SignedAngle(Vector3.up, direction, Vector3.forward);
+            Debug.Log(angle);
+            Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
+            top.localRotation =
+            Quaternion.Slerp(transform.localRotation, targetRotation, 0.3f);
+        }
+        else
+        {
+            top.localRotation = Quaternion.identity;
+        }
     }
 
     void GetEnemies()

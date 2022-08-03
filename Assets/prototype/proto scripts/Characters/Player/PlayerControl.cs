@@ -14,7 +14,7 @@ public class PlayerControl : MonoBehaviour
 
     void FixedUpdate()
     {
-        _playerMoving.Move(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
+        //_playerMoving.Move(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
         _playerMoving.Move(new Vector2(JoystickInput.GetHorizontalAxis(), JoystickInput.GetVerticalAxis()));
     }
 
