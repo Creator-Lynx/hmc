@@ -29,13 +29,17 @@ public class PlayerAnimator : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.H))
         {
-            if (canChangeHelmet)
-            {
-                isHelmet = !isHelmet;
-                canChangeHelmet = false;
-                animator.SetTrigger(isHelmet ? "helmetDown" : "helmetUp");
-                StartCoroutine(HelmetDelay());
-            }
+            HelmetChange();
+        }
+    }
+    public void HelmetChange()
+    {
+        if (canChangeHelmet)
+        {
+            isHelmet = !isHelmet;
+            canChangeHelmet = false;
+            animator.SetTrigger(isHelmet ? "helmetDown" : "helmetUp");
+            StartCoroutine(HelmetDelay());
         }
     }
 
@@ -43,5 +47,17 @@ public class PlayerAnimator : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         canChangeHelmet = true;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.name == "HelmetDown")
+        {
+            animator.SetTrigger("helmetDown");
+        }
+        if (other.gameObject.name == "GunUp")
+        {
+            animator.SetTrigger("takeGun");
+        }
     }
 }

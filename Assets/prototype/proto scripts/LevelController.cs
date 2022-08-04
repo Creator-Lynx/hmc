@@ -8,6 +8,8 @@ public class LevelController : MonoBehaviour
     public static LevelController instance;
     [SerializeField] GameObject door;
     [SerializeField] GameObject loseScreen, winScreen;
+
+    [SerializeField] GameObject player;
     int ScoreToWin = 8;
     void Start()
     {
@@ -28,7 +30,9 @@ public class LevelController : MonoBehaviour
     }
     void Win()
     {
-        winScreen.SetActive(true);
+        //winScreen.SetActive(true);
+        player.GetComponent<PlayerAnimator>().HelmetChange();
+        Camera.main.GetComponent<AudioSource>().Stop();
     }
     public void Lose()
     {

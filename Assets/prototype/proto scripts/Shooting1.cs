@@ -74,10 +74,7 @@ public class Shooting1 : MonoBehaviour
                     CreateBullet((closerEnemy.transform.position - transform.position).normalized);
                 }
         }
-        else
-        {
-            CreateBullet(transform.up);
-        }
+
     }
     void CreateBullet(Vector2 direction)
     {
