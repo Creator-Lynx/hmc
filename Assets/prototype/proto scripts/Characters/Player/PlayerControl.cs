@@ -8,6 +8,7 @@ public class PlayerControl : MonoBehaviour
     Shooting _playerShooting;
     void Start()
     {
+        Camera.main.GetComponent<CameraFollow>().folowedObj = gameObject.transform;
         _playerMoving = GetComponent<PlayerMoving>();
         _playerShooting = GetComponent<Shooting>();
     }

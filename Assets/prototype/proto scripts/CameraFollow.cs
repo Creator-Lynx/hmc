@@ -5,10 +5,11 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     static bool isFirst = true;
-    [SerializeField] Transform folowedObj;
+    public Transform folowedObj;
     [SerializeField] float folowingSpeed = 1f;
-    void Start()
+    void Awake()
     {
+        folowedObj = GameObject.FindGameObjectWithTag("Player").transform;
         if (isFirst)
         {
             DontDestroyOnLoad(gameObject);
@@ -23,9 +24,14 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3
-        (transform.position.x,
-        folowedObj.position.y + folowingSpeed,
-        transform.position.z);
+        if (folowedObj != null)
+        {
+            transform.position = new Vector3
+            (transform.position.x,
+            folowedObj.position.y + folowingSpeed,
+            transform.position.z);
+        }
+
+
     }
 }

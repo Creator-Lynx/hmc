@@ -53,7 +53,8 @@ public class PlayerAnimator : MonoBehaviour
     {
         if (other.gameObject.name == "HelmetDown")
         {
-            animator.SetTrigger("helmetDown");
+            HelmetChange();
+
         }
         if (other.gameObject.name == "GunUp")
         {

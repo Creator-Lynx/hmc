@@ -13,6 +13,8 @@ public class LevelController : MonoBehaviour
     int ScoreToWin = 8;
     void Start()
     {
+        if (!Camera.main.GetComponent<AudioSource>().isPlaying)
+            Camera.main.GetComponent<AudioSource>().Play();
         instance = this;
     }
 
@@ -33,6 +35,7 @@ public class LevelController : MonoBehaviour
         //winScreen.SetActive(true);
         player.GetComponent<PlayerAnimator>().HelmetChange();
         Camera.main.GetComponent<AudioSource>().Stop();
+
     }
     public void Lose()
     {
