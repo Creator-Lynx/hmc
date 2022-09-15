@@ -6,17 +6,30 @@ public class PlayerControl : MonoBehaviour
 {
     PlayerMoving _playerMoving;
     Shooting _playerShooting;
+
+
     void Start()
     {
         Camera.main.GetComponent<CameraFollow>().folowedObj = gameObject.transform;
         _playerMoving = GetComponent<PlayerMoving>();
         _playerShooting = GetComponent<Shooting>();
+
+
     }
 
     void FixedUpdate()
     {
-        //_playerMoving.Move(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
-        _playerMoving.Move(new Vector2(JoystickInput.GetHorizontalAxis(), JoystickInput.GetVerticalAxis()));
+        if (CurrentInput.currentInputType == InputType.pcKeyboard)
+        {
+            _playerMoving.Move(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
+        }
+        else
+        {
+            _playerMoving.Move(new Vector2(JoystickInput.GetHorizontalAxis(), JoystickInput.GetVerticalAxis()));
+        }
+
+
+
     }
 
     void Update()
@@ -27,3 +40,4 @@ public class PlayerControl : MonoBehaviour
         }
     }
 }
+

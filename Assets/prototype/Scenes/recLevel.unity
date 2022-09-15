@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 616759299}
   m_Layer: 0
   m_Name: Pixel Perfect Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -411,6 +411,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.44003296
       objectReference: {fileID: 0}
+    - target: {fileID: 4166186625798127856, guid: 8133a61c8c2f3f449ac67b5dbafa66c8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 28.50003
+      objectReference: {fileID: 0}
     - target: {fileID: 4166186626520921254, guid: 8133a61c8c2f3f449ac67b5dbafa66c8, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -489,6 +493,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6167585918304928327, guid: dfaba7f38831c7e4194e844fd808a15c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ac1ce63ef6eb2ee4abf1dcb12c0dff74, type: 2}
     - target: {fileID: 6167585919646377763, guid: dfaba7f38831c7e4194e844fd808a15c, type: 3}
       propertyPath: m_Name
       value: Grid
