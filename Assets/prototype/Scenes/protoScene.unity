@@ -568,6 +568,14 @@ PrefabInstance:
       value: Player 1
       objectReference: {fileID: 0}
     - target: {fileID: 1854854122472423746, guid: b29547a7945e8ec4fb24c90de83f08ce, type: 3}
+      propertyPath: m_Mass
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854854122472423746, guid: b29547a7945e8ec4fb24c90de83f08ce, type: 3}
+      propertyPath: m_LinearDrag
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854854122472423746, guid: b29547a7945e8ec4fb24c90de83f08ce, type: 3}
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
@@ -633,11 +641,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1854854122472423774, guid: b29547a7945e8ec4fb24c90de83f08ce, type: 3}
       propertyPath: speed
-      value: 11
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1854854122472423774, guid: b29547a7945e8ec4fb24c90de83f08ce, type: 3}
       propertyPath: timeToMaxSpeed
-      value: 0.08
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854854122472423774, guid: b29547a7945e8ec4fb24c90de83f08ce, type: 3}
+      propertyPath: timeToNullSpeed
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1854854122712903269, guid: b29547a7945e8ec4fb24c90de83f08ce, type: 3}
       propertyPath: m_Size.y
@@ -653,7 +665,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1854854122472423744, guid: b29547a7945e8ec4fb24c90de83f08ce, type: 3}
-    - {fileID: 1854854122472423773, guid: b29547a7945e8ec4fb24c90de83f08ce, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b29547a7945e8ec4fb24c90de83f08ce, type: 3}
 --- !u!1 &363882062
 GameObject:
@@ -2676,22 +2687,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1854854122472423745, guid: b29547a7945e8ec4fb24c90de83f08ce, type: 3}
   m_PrefabInstance: {fileID: 289251592}
   m_PrefabAsset: {fileID: 0}
---- !u!58 &1575443813
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575443809}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.76
 --- !u!1 &1684143143
 GameObject:
   m_ObjectHideFlags: 0
@@ -3544,7 +3539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4166186625798127856, guid: 8133a61c8c2f3f449ac67b5dbafa66c8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 28.50003
+      value: 28.5
       objectReference: {fileID: 0}
     - target: {fileID: 4166186626007757695, guid: 8133a61c8c2f3f449ac67b5dbafa66c8, type: 3}
       propertyPath: m_IsActive

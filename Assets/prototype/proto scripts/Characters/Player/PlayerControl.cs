@@ -17,8 +17,13 @@ public class PlayerControl : MonoBehaviour
 
     }
 
-    void FixedUpdate()
+
+    void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space) || FireInput.GetFireInput())
+        {
+            _playerShooting.Shoot();
+        }
         if (CurrentInput.currentInputType == InputType.pcKeyboard)
         {
             _playerMoving.Move(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
@@ -26,17 +31,6 @@ public class PlayerControl : MonoBehaviour
         else
         {
             _playerMoving.Move(new Vector2(JoystickInput.GetHorizontalAxis(), JoystickInput.GetVerticalAxis()));
-        }
-
-
-
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) || FireInput.GetFireInput())
-        {
-            _playerShooting.Shoot();
         }
     }
 }

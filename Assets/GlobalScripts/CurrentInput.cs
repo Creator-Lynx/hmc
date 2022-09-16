@@ -14,7 +14,9 @@ public class CurrentInput : MonoBehaviour
 #else
         currentInputType = InputType.pcKeyboard;
 #endif
+#if UNITY_EDITOR
         currentInputType = InputType.androidJoystick;
+#endif
     }
 
     public static void SetInputType(InputType type) => currentInputType = type;
