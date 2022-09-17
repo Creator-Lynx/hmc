@@ -9,13 +9,15 @@ public class CurrentInput : MonoBehaviour
     {
 #if UNITY_ANDROID
         currentInputType = InputType.androidJoystick;
+        Application.targetFrameRate = 30;
 #elif UNITY_STANDALONE
         currentInputType = InputType.pcKeyboard;
+        Application.targetFrameRate = 60;
 #else
         currentInputType = InputType.pcKeyboard;
 #endif
 #if UNITY_EDITOR
-        currentInputType = InputType.androidJoystick;
+        currentInputType = InputType.pcKeyboard;
 #endif
     }
 

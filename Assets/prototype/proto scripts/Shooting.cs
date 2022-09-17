@@ -33,7 +33,7 @@ public class Shooting : MonoBehaviour
         float angle = Vector2.SignedAngle(Vector2.up, direction);
         Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
         top.rotation =
-        Quaternion.Slerp(top.rotation, targetRotation, topRotationSpeed);
+        Quaternion.Lerp(top.rotation, targetRotation, topRotationSpeed);
     }
 
     void AutoRotate()
@@ -44,7 +44,7 @@ public class Shooting : MonoBehaviour
             float angle = Vector3.SignedAngle(Vector3.up, direction, Vector3.forward);
             Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
             top.rotation =
-            Quaternion.Slerp(top.rotation, targetRotation, topRotationSpeed);
+            Quaternion.Lerp(top.rotation, targetRotation, topRotationSpeed);
         }
         else
         {

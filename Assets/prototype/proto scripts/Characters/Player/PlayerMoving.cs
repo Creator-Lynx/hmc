@@ -20,17 +20,21 @@ public class PlayerMoving : MonoBehaviour
     }
     float timer = 0f, backTimer = 0f;
     [SerializeField] float timeToMaxSpeed = 0.1f, timeToNullSpeed = 0.1f;
+    [SerializeField] float botRotateLerpSpeed = 0.6f;
+    Vector2 _currentDirection;
+    [SerializeField] AnimationCurve startCurve, stopCurve;
     public void Move(Vector2 direction)
     {
         //rb.velocity = Vector3.Slerp(Vector3.zero, direction * speed, timer / timeToMaxSpeed);
         //rb.AddForce(direction * speed * Time.deltaTime, ForceMode2D.Impulse);
-        Vector2 targetMove = direction * speed * Time.deltaTime;
-        rb.MovePosition((Vector2)transform.position + Vector2.Lerp(Vector2.zero, targetMove, timer / timeToMaxSpeed));
+        _currentDirection = Vector2.Lerp(_currentDirection, direction, botRotateLerpSpeed * Time.deltaTime);
+        Vector2 targetMove = _currentDirection * speed * Time.deltaTime;
+        rb.MovePosition((Vector2)transform.position + Vector2.Lerp(Vector2.zero, targetMove, startCurve.Evaluate(timer / timeToMaxSpeed)));
         if (direction.magnitude < 0.1f)
         {
             //rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, 10 * Time.deltaTime);
-            targetMove = direction * speed * Time.deltaTime;
-            rb.MovePosition((Vector2)transform.position + Vector2.Lerp(targetMove, Vector2.zero, backTimer / timeToNullSpeed));
+            targetMove = _currentDirection * speed * Time.deltaTime;
+            rb.MovePosition((Vector2)transform.position + Vector2.Lerp(targetMove, Vector2.zero, stopCurve.Evaluate(backTimer / timeToNullSpeed)));
             anim.isWalk = false;
             timer = 0f;
             backTimer += Time.deltaTime;
@@ -40,7 +44,7 @@ public class PlayerMoving : MonoBehaviour
         timer += Time.deltaTime;
         anim.isWalk = true;
         direction.Normalize();
-        float angle = Vector3.SignedAngle(Vector3.up, direction, Vector3.forward);
+        float angle = Vector2.SignedAngle(Vector3.up, direction);
         Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
         transform.rotation =
         Quaternion.Slerp(transform.rotation, targetRotation, 0.1f);
