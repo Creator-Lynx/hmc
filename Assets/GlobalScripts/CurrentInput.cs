@@ -17,6 +17,7 @@ public class CurrentInput : MonoBehaviour
         currentInputType = InputType.pcKeyboard;
 #endif
 #if UNITY_EDITOR
+        Application.targetFrameRate = -1;
         currentInputType = InputType.pcKeyboard;
 #endif
     }

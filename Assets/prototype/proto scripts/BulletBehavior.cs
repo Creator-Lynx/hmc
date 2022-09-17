@@ -13,6 +13,7 @@ public class BulletBehavior : MonoBehaviour
     }
     public void SetDirection(Vector2 direction, DamageTaker.Type type)
     {
+        transform.rotation = Quaternion.LookRotation(Vector3.zero, direction);
         _direction = direction;
         _type = type;
     }
@@ -23,16 +24,16 @@ public class BulletBehavior : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("Triggered");
-        DamageTaker taker = other.GetComponent<DamageTaker>();
-        if (taker != null)
-        {
-            taker.TakeDamage(1, _type);
-        }
-        Destroy(gameObject);
-    }
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    Debug.Log("Triggered");
+    //    DamageTaker taker = other.GetComponent<DamageTaker>();
+    //    if (taker != null)
+    //    {
+    //        taker.TakeDamage(1, _type);
+    //    }
+    //    Destroy(gameObject);
+    //}
 
     private void OnCollisionEnter2D(Collision2D other)
     {
