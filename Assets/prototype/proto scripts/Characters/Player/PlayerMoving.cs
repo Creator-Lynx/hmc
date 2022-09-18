@@ -7,6 +7,8 @@ public class PlayerMoving : MonoBehaviour
     [SerializeField] float speed;
     Rigidbody2D rb;
     PlayerAnimator anim;
+    [SerializeField]
+    Transform bottom;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -23,6 +25,10 @@ public class PlayerMoving : MonoBehaviour
     [SerializeField] float botRotateLerpSpeed = 0.6f;
     Vector2 _currentDirection;
     [SerializeField] AnimationCurve startCurve, stopCurve;
+    /// <summary>
+    /// takes normalized direction and move character on it
+    /// </summary>
+    /// <param name="direction"></param>
     public void Move(Vector2 direction)
     {
         //rb.velocity = Vector3.Slerp(Vector3.zero, direction * speed, timer / timeToMaxSpeed);
@@ -43,10 +49,9 @@ public class PlayerMoving : MonoBehaviour
         backTimer = 0f;
         timer += Time.deltaTime;
         anim.isWalk = true;
-        direction.Normalize();
-        float angle = Vector2.SignedAngle(Vector3.up, direction);
+        float angle = Vector2.SignedAngle(Vector3.up, _currentDirection);
         Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
-        transform.rotation =
-        Quaternion.Slerp(transform.rotation, targetRotation, 0.1f);
+        bottom.rotation =
+        Quaternion.Slerp(bottom.rotation, targetRotation, botRotateLerpSpeed * Time.deltaTime);
     }
 }

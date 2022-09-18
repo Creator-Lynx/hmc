@@ -13,14 +13,14 @@ public class BulletBehavior : MonoBehaviour
     }
     public void SetDirection(Vector2 direction, DamageTaker.Type type)
     {
-        transform.rotation = Quaternion.LookRotation(Vector3.zero, direction);
+        transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
         _direction = direction;
         _type = type;
     }
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(_direction * Time.deltaTime * bulletSpeed);
+        transform.Translate(Vector3.up * Time.deltaTime * bulletSpeed);
     }
 
 
@@ -37,12 +37,14 @@ public class BulletBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("Collision");
         DamageTaker taker = other.gameObject.GetComponent<DamageTaker>();
         if (taker != null)
         {
             taker.TakeDamage(1, _type);
+
         }
+        if (!other.gameObject.CompareTag("Player"))
+            Destroy(gameObject);
     }
 
 }

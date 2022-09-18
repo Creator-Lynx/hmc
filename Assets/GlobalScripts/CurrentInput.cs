@@ -5,6 +5,8 @@ using UnityEngine;
 public class CurrentInput : MonoBehaviour
 {
     public static InputType currentInputType;
+    [SerializeField]
+    InputType typeForEditor;
     void Start()
     {
 #if UNITY_ANDROID
@@ -18,7 +20,7 @@ public class CurrentInput : MonoBehaviour
 #endif
 #if UNITY_EDITOR
         Application.targetFrameRate = -1;
-        currentInputType = InputType.pcKeyboard;
+        currentInputType = typeForEditor;
 #endif
     }
 

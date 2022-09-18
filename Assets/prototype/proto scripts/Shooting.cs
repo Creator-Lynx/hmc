@@ -10,7 +10,7 @@ public class Shooting : MonoBehaviour
 
 
     [SerializeField] GameObject bulletPrefab;
-    [SerializeField] Transform top, bulletSpawn;
+    [SerializeField] Transform top, bulletSpawn, bottom;
     [SerializeField] float topRotationSpeed = 0.2f;
 
     void FixedUpdate()
@@ -33,7 +33,7 @@ public class Shooting : MonoBehaviour
         float angle = Vector2.SignedAngle(Vector2.up, direction);
         Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
         top.rotation =
-        Quaternion.Lerp(top.rotation, targetRotation, topRotationSpeed);
+        Quaternion.Lerp(top.rotation, targetRotation, topRotationSpeed * Time.deltaTime);
     }
 
     void AutoRotate()
@@ -44,11 +44,12 @@ public class Shooting : MonoBehaviour
             float angle = Vector3.SignedAngle(Vector3.up, direction, Vector3.forward);
             Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
             top.rotation =
-            Quaternion.Lerp(top.rotation, targetRotation, topRotationSpeed);
+            Quaternion.Lerp(top.rotation, targetRotation, topRotationSpeed * Time.deltaTime);
         }
         else
         {
-            top.localRotation = Quaternion.Lerp(top.localRotation, Quaternion.identity, 0.3f);
+            top.rotation =
+            Quaternion.Lerp(top.rotation, bottom.rotation, topRotationSpeed * Time.deltaTime);
         }
     }
 
@@ -65,7 +66,6 @@ public class Shooting : MonoBehaviour
                 Vector2 dir = (enemies[i].transform.position - transform.position).normalized;
                 RaycastHit2D hitInfo =
                 Physics2D.Raycast((Vector2)transform.position + dir * 1f, dir, shootingRange);
-                Debug.Log(hitInfo);
                 if (hitInfo.collider != null && hitInfo.collider.CompareTag("Enemy"))
                 {
                     float dist = Vector2.Distance((Vector2)enemies[i].transform.position, (Vector2)transform.position);
@@ -86,11 +86,11 @@ public class Shooting : MonoBehaviour
         {
             if (closerEnemy != null)
             {
-                CreateBullet((closerEnemy.transform.position - transform.position).normalized);
+                CreateBullet((closerEnemy.transform.position - bulletSpawn.position).normalized);
             }
             else
             {
-                CreateBullet(transform.up);
+                CreateBullet(top.up);
             }
         }
         else
