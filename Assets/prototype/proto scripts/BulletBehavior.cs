@@ -31,6 +31,12 @@ public class BulletBehavior : MonoBehaviour
             taker.TakeDamage(1, _type);
 
         }
+        Enemy enemy = other.gameObject.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(1, _type);
+
+        }
         if (!other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("Enemy"))
             Destroy(gameObject);
     }
