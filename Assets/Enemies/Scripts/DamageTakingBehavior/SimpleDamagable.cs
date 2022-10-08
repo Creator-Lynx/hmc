@@ -1,4 +1,3 @@
-using System.Threading;
 using UnityEngine;
 
 public class SimpleDamagable : IDamagable
@@ -21,8 +20,4 @@ public class SimpleDamagable : IDamagable
         return HP;
     }
 
-    public void Initialize()
-    {
-
-    }
 }

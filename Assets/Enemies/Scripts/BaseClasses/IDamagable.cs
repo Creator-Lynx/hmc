@@ -8,5 +8,4 @@ public interface IDamagable
     /// <returns></returns>
     bool TakeDamage(int damage);
     int GetHitPoints();
-    void Initialize();
 }
