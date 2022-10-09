@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class SimpleEnemy : Enemy
 {
+    [SerializeField]
+    GameObject bulletPrefab;
     void Start()
     {
         damagable = new SimpleDamagable(gameObject);
         patrolable = new SimplePatrolBehavior(gameObject);
         searchable = new OldSearch(transform);
+        shootable = new OldShoot(transform, bulletPrefab);
     }
 
 
     void Update()
     {
         patrolable.PatrolMoving();
-        if (searchable.Search()) Debug.Log("I SEE YOU");
+        if (searchable.Search()) shootable.Shoot();
     }
 }
