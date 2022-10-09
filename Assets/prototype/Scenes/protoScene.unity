@@ -112,7 +112,7 @@ NavMeshSettings:
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
-    minRegionArea: 2
+    minRegionArea: 0.02
     manualCellSize: 0
     cellSize: 0.16666667
     manualTileSize: 0
@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 24943285}
   - component: {fileID: 24943284}
   - component: {fileID: 24943283}
+  - component: {fileID: 24943286}
   m_Layer: 0
   m_Name: Static Sprite (3)
   m_TagString: Untagged
@@ -233,6 +234,22 @@ Transform:
   m_Father: {fileID: 1839199981}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &24943286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24943282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &114693895
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +261,7 @@ GameObject:
   - component: {fileID: 114693898}
   - component: {fileID: 114693897}
   - component: {fileID: 114693896}
+  - component: {fileID: 114693899}
   m_Layer: 0
   m_Name: Static Sprite (2)
   m_TagString: Untagged
@@ -343,6 +361,22 @@ Transform:
   m_Father: {fileID: 1839199981}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114693899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114693895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &167996997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -436,6 +470,7 @@ GameObject:
   - component: {fileID: 245105631}
   - component: {fileID: 245105633}
   - component: {fileID: 245105632}
+  - component: {fileID: 245105634}
   m_Layer: 0
   m_Name: Static Sprite (12)
   m_TagString: Untagged
@@ -535,6 +570,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &245105634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245105630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &286673082 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4166186626113542466, guid: 8133a61c8c2f3f449ac67b5dbafa66c8, type: 3}
@@ -551,6 +602,7 @@ GameObject:
   - component: {fileID: 363882063}
   - component: {fileID: 363882065}
   - component: {fileID: 363882064}
+  - component: {fileID: 363882066}
   m_Layer: 0
   m_Name: Static Sprite (5)
   m_TagString: Untagged
@@ -650,6 +702,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &363882066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363882062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &384132316
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,6 +729,7 @@ GameObject:
   - component: {fileID: 384132317}
   - component: {fileID: 384132319}
   - component: {fileID: 384132318}
+  - component: {fileID: 384132320}
   m_Layer: 0
   m_Name: Static Sprite (10)
   m_TagString: Untagged
@@ -760,6 +829,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &384132320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384132316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &457286279 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4166186626007757695, guid: 8133a61c8c2f3f449ac67b5dbafa66c8, type: 3}
@@ -776,6 +861,7 @@ GameObject:
   - component: {fileID: 463401957}
   - component: {fileID: 463401959}
   - component: {fileID: 463401958}
+  - component: {fileID: 463401960}
   m_Layer: 0
   m_Name: Static Sprite (11)
   m_TagString: Untagged
@@ -875,6 +961,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &463401960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463401956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &473956555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -972,6 +1074,7 @@ GameObject:
   - component: {fileID: 476740632}
   - component: {fileID: 476740634}
   - component: {fileID: 476740633}
+  - component: {fileID: 476740635}
   m_Layer: 0
   m_Name: Static Sprite (13)
   m_TagString: Untagged
@@ -1071,6 +1174,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &476740635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476740631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &512102119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1125,6 +1244,10 @@ PrefabInstance:
     - target: {fileID: 2655767316924945564, guid: c675e5c6494107d499917697f8e27c58, type: 3}
       propertyPath: m_Name
       value: Enemy (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655767316924945564, guid: c675e5c6494107d499917697f8e27c58, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c675e5c6494107d499917697f8e27c58, type: 3}
@@ -1337,7 +1460,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 522033080}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1421,6 +1544,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2655767316924945564, guid: c675e5c6494107d499917697f8e27c58, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c675e5c6494107d499917697f8e27c58, type: 3}
 --- !u!4 &608484151 stripped
@@ -1428,6 +1555,88 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2655767316924945553, guid: c675e5c6494107d499917697f8e27c58, type: 3}
   m_PrefabInstance: {fileID: 608484150}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &705724346
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 705724349}
+  - component: {fileID: 705724348}
+  - component: {fileID: 705724347}
+  m_Layer: 0
+  m_Name: NavMesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &705724347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705724346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae0e0d37a56e124f94a88beb33872a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideByGrid: 0
+  m_UseMeshPrefab: {fileID: 0}
+  m_CompressBounds: 1
+  m_OverrideVector: {x: 1, y: 1, z: 1}
+--- !u!114 &705724348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705724346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148387606d0ccd84fa326ca211f274ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_OverrideByGrid: 0
+  m_UseMeshPrefab: {fileID: 0}
+  m_CompressBounds: 0
+  m_OverrideVector: {x: 1, y: 1, z: 1}
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_HideEditorLogs: 0
+  m_NavMeshData: {fileID: 0}
+--- !u!4 &705724349
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705724346}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 2.44, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &710622953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,6 +1648,7 @@ GameObject:
   - component: {fileID: 710622954}
   - component: {fileID: 710622956}
   - component: {fileID: 710622955}
+  - component: {fileID: 710622957}
   m_Layer: 0
   m_Name: Static Sprite (14)
   m_TagString: Untagged
@@ -1538,6 +1748,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &710622957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710622953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &738807147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1582,6 +1808,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &771116622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7169832538664275787, guid: 204188f8d04b5e64fb09c528e85d5458, type: 3}
+  m_PrefabInstance: {fileID: 2947860699906206649}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &771116623
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771116622}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &856185906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1637,6 +1890,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2655767316924945564, guid: c675e5c6494107d499917697f8e27c58, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c675e5c6494107d499917697f8e27c58, type: 3}
 --- !u!4 &856185907 stripped
@@ -1655,6 +1912,7 @@ GameObject:
   - component: {fileID: 870226201}
   - component: {fileID: 870226203}
   - component: {fileID: 870226202}
+  - component: {fileID: 870226204}
   m_Layer: 0
   m_Name: Static Sprite (6)
   m_TagString: Untagged
@@ -1754,6 +2012,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &870226204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870226200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &905140115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1765,6 +2039,7 @@ GameObject:
   - component: {fileID: 905140118}
   - component: {fileID: 905140117}
   - component: {fileID: 905140116}
+  - component: {fileID: 905140119}
   m_Layer: 0
   m_Name: Static Sprite (1)
   m_TagString: Untagged
@@ -1864,6 +2139,22 @@ Transform:
   m_Father: {fileID: 1839199981}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &905140119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905140115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &943569221
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,6 +2255,7 @@ GameObject:
   - component: {fileID: 1170054250}
   - component: {fileID: 1170054252}
   - component: {fileID: 1170054251}
+  - component: {fileID: 1170054253}
   m_Layer: 0
   m_Name: Static Sprite (15)
   m_TagString: Untagged
@@ -2063,6 +2355,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1170054253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170054249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &1241266557
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2117,6 +2425,10 @@ PrefabInstance:
     - target: {fileID: 2655767316924945564, guid: c675e5c6494107d499917697f8e27c58, type: 3}
       propertyPath: m_Name
       value: Enemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655767316924945564, guid: c675e5c6494107d499917697f8e27c58, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c675e5c6494107d499917697f8e27c58, type: 3}
@@ -2179,6 +2491,10 @@ PrefabInstance:
     - target: {fileID: 2655767316924945564, guid: c675e5c6494107d499917697f8e27c58, type: 3}
       propertyPath: m_Name
       value: Enemy (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655767316924945564, guid: c675e5c6494107d499917697f8e27c58, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c675e5c6494107d499917697f8e27c58, type: 3}
@@ -2348,6 +2664,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2655767316924945564, guid: c675e5c6494107d499917697f8e27c58, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c675e5c6494107d499917697f8e27c58, type: 3}
 --- !u!4 &1383035690 stripped
@@ -2397,6 +2717,7 @@ GameObject:
   - component: {fileID: 1429710868}
   - component: {fileID: 1429710870}
   - component: {fileID: 1429710869}
+  - component: {fileID: 1429710871}
   m_Layer: 0
   m_Name: Static Sprite (16)
   m_TagString: Untagged
@@ -2496,6 +2817,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1429710871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429710867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1486728212
 GameObject:
   m_ObjectHideFlags: 0
@@ -2630,6 +2967,7 @@ GameObject:
   - component: {fileID: 1773373047}
   - component: {fileID: 1773373046}
   - component: {fileID: 1773373045}
+  - component: {fileID: 1773373048}
   m_Layer: 0
   m_Name: Static Sprite (4)
   m_TagString: Untagged
@@ -2729,6 +3067,22 @@ Transform:
   m_Father: {fileID: 1839199981}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1773373048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773373044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1830695785
 GameObject:
   m_ObjectHideFlags: 0
@@ -2740,6 +3094,7 @@ GameObject:
   - component: {fileID: 1830695788}
   - component: {fileID: 1830695787}
   - component: {fileID: 1830695786}
+  - component: {fileID: 1830695789}
   m_Layer: 0
   m_Name: Static Sprite
   m_TagString: Untagged
@@ -2839,6 +3194,22 @@ Transform:
   m_Father: {fileID: 1839199981}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1830695789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830695785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1839199979
 GameObject:
   m_ObjectHideFlags: 0
@@ -2914,6 +3285,7 @@ GameObject:
   - component: {fileID: 1944557246}
   - component: {fileID: 1944557248}
   - component: {fileID: 1944557247}
+  - component: {fileID: 1944557249}
   m_Layer: 0
   m_Name: Static Sprite (9)
   m_TagString: Untagged
@@ -3013,6 +3385,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1944557249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944557245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &2064020962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3068,6 +3456,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2655767316924945564, guid: c675e5c6494107d499917697f8e27c58, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c675e5c6494107d499917697f8e27c58, type: 3}
 --- !u!4 &2064020963 stripped
@@ -3086,6 +3478,7 @@ GameObject:
   - component: {fileID: 2081855627}
   - component: {fileID: 2081855629}
   - component: {fileID: 2081855628}
+  - component: {fileID: 2081855630}
   m_Layer: 0
   m_Name: Static Sprite (7)
   m_TagString: Untagged
@@ -3185,6 +3578,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2081855630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081855626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2121732994
 GameObject:
   m_ObjectHideFlags: 0
@@ -3196,6 +3605,7 @@ GameObject:
   - component: {fileID: 2121732995}
   - component: {fileID: 2121732997}
   - component: {fileID: 2121732996}
+  - component: {fileID: 2121732998}
   m_Layer: 0
   m_Name: Static Sprite (8)
   m_TagString: Untagged
@@ -3295,6 +3705,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2121732998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121732994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1854854122220478537 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3933795079261133769, guid: 187009557a455384a9d11518ff9a43f2, type: 3}
@@ -3312,10 +3738,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 522033080}
     m_Modifications:
-    - target: {fileID: 5880818595289927060, guid: 204188f8d04b5e64fb09c528e85d5458, type: 3}
-      propertyPath: bulletPrefab
-      value: 
-      objectReference: {fileID: 8752750771885067238, guid: 4b3f58a727403d84e8f145d55e0d5098, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_AutoBraking
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_WalkableMask
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7169832538664275782, guid: 204188f8d04b5e64fb09c528e85d5458, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3364,6 +3794,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyArch
       objectReference: {fileID: 0}
+    - target: {fileID: 7169832538664275787, guid: 204188f8d04b5e64fb09c528e85d5458, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 204188f8d04b5e64fb09c528e85d5458, type: 3}
 --- !u!1001 &3398641256951511936
@@ -3373,9 +3807,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3933795078337563711, guid: 187009557a455384a9d11518ff9a43f2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933795078762525923, guid: 187009557a455384a9d11518ff9a43f2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3933795079261133769, guid: 187009557a455384a9d11518ff9a43f2, type: 3}
       propertyPath: m_Name
       value: Player 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933795079261133769, guid: 187009557a455384a9d11518ff9a43f2, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3933795079261133776, guid: 187009557a455384a9d11518ff9a43f2, type: 3}
       propertyPath: m_RootOrder
@@ -3420,6 +3866,10 @@ PrefabInstance:
     - target: {fileID: 3933795079261133776, guid: 187009557a455384a9d11518ff9a43f2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933795079525844525, guid: 187009557a455384a9d11518ff9a43f2, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 187009557a455384a9d11518ff9a43f2, type: 3}
