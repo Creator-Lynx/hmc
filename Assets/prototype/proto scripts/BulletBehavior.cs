@@ -23,6 +23,25 @@ public class BulletBehavior : MonoBehaviour
         transform.Translate(Vector3.up * Time.deltaTime * bulletSpeed);
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        DamageTaker taker = other.gameObject.GetComponent<DamageTaker>();
+        if (taker != null)
+        {
+            taker.TakeDamage(1, _type);
+            if (taker.GetTakerType() == _type) Destroy(gameObject);
+
+        }
+        Enemy enemy = other.gameObject.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(1, _type);
+            if (_type == DamageTaker.Type.enemy) Destroy(gameObject);
+
+        }
+        if (!other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("Enemy"))
+            Destroy(gameObject);
+    }
     private void OnCollisionEnter2D(Collision2D other)
     {
         DamageTaker taker = other.gameObject.GetComponent<DamageTaker>();

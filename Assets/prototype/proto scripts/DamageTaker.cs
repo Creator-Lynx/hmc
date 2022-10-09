@@ -20,6 +20,10 @@ public class DamageTaker : MonoBehaviour
         }
 
     }
+    public Type GetTakerType()
+    {
+        return takerType;
+    }
 
     public enum Type
     {
