@@ -8,11 +8,13 @@ public class SimpleEnemy : Enemy
     {
         damagable = new SimpleDamagable(gameObject);
         patrolable = new SimplePatrolBehavior(gameObject);
+        searchable = new OldSearch(transform);
     }
 
 
     void Update()
     {
         patrolable.PatrolMoving();
+        if (searchable.Search()) Debug.Log("I SEE YOU");
     }
 }

@@ -37,7 +37,7 @@ public class SimplePatrolBehavior : IPatrolable
 
             if (currentSegment >= patrolPoints.Length - 1)
             {
-                Debug.Log("back move");
+
                 currentSegment = patrolPoints.Length - 2;
                 isForwardMoving = false;
                 timer = 0f;
