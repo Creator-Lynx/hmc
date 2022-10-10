@@ -9,7 +9,7 @@ public class SimpleEnemy : Enemy
     void Start()
     {
         damagable = new SimpleDamagable(gameObject);
-        patrolable = new SimplePatrolBehavior(gameObject);
+        patrolable = new NavMeshPatrolBehavior(gameObject);
         searchable = new OldSearch(transform);
         shootable = new OldShoot(transform, bulletPrefab);
     }

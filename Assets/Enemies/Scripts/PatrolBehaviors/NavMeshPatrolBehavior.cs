@@ -18,6 +18,7 @@ public class NavMeshPatrolBehavior : IPatrolable
             _transform.position + new Vector3(2, 0, 0)
         };
         segmentMovingTime = 2f;
+        agent.SetDestination(patrolPoints[1]);
     }
     public NavMeshPatrolBehavior(GameObject gameObject, Vector3[] PatrolPoints, float timeToMoveOnOneSegment)
     {
@@ -25,6 +26,8 @@ public class NavMeshPatrolBehavior : IPatrolable
         _transform = gameObject.transform;
         patrolPoints = PatrolPoints;
         segmentMovingTime = timeToMoveOnOneSegment;
+        agent = gameObject.GetComponent<NavMeshAgent>();
+        agent.SetDestination(patrolPoints[1]);
     }
     float timer = 0f;
     int currentSegment = 0, startInd = 0, endInd = 1;
@@ -33,7 +36,7 @@ public class NavMeshPatrolBehavior : IPatrolable
     {
         timer += Time.deltaTime;
         float t = timer / segmentMovingTime;
-        _transform.position = Vector3.Lerp(patrolPoints[startInd], patrolPoints[endInd], t);
+        //_transform.position = Vector3.Lerp(patrolPoints[startInd], patrolPoints[endInd], t);
         if (t > 1f)
         {
             currentSegment += isForwardMoving ? 1 : -1;
@@ -53,6 +56,7 @@ public class NavMeshPatrolBehavior : IPatrolable
             }
             startInd = isForwardMoving ? currentSegment : currentSegment + 1;
             endInd = isForwardMoving ? currentSegment + 1 : currentSegment;
+            agent.SetDestination(patrolPoints[endInd]);
         }
 
     }
