@@ -1622,6 +1622,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2655767316924945553, guid: c675e5c6494107d499917697f8e27c58, type: 3}
   m_PrefabInstance: {fileID: 608484150}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &700111869 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7169832538664275787, guid: 204188f8d04b5e64fb09c528e85d5458, type: 3}
+  m_PrefabInstance: {fileID: 2947860699906206649}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &700111870
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700111869}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &710622953
 GameObject:
   m_ObjectHideFlags: 0
@@ -3909,7 +3936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7169832538664275787, guid: 204188f8d04b5e64fb09c528e85d5458, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8911458057604579561, guid: 204188f8d04b5e64fb09c528e85d5458, type: 3}
       propertyPath: m_LocalRotation.w
