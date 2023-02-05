@@ -1,14 +1,13 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NavMeshPatrolBehavior : IPatrolable
+public class NavMeshPatrolPingPongBehavior : IPatrolable
 {
     GameObject _object;
     NavMeshAgent agent;
     Transform _transform;
     Vector3[] patrolPoints;
-    float segmentMovingTime;
-    public NavMeshPatrolBehavior(GameObject gameObject)
+    public NavMeshPatrolPingPongBehavior(GameObject gameObject)
     {
         _object = gameObject;
         agent = gameObject.GetComponent<NavMeshAgent>();
@@ -19,46 +18,43 @@ public class NavMeshPatrolBehavior : IPatrolable
             _transform.position + new Vector3(-2, 0, 0),
             _transform.position + new Vector3(2, 0, 0)
         };
-        segmentMovingTime = 2f;
-        agent.SetDestination(patrolPoints[1]);
+        agent.SetDestination(patrolPoints[0]);
+        isForwardMoving = true;
     }
-    public NavMeshPatrolBehavior(GameObject gameObject, Vector3[] PatrolPoints, float timeToMoveOnOneSegment)
+    public NavMeshPatrolPingPongBehavior(GameObject gameObject, Vector3[] PatrolPoints)
     {
         _object = gameObject;
         _transform = gameObject.transform;
         patrolPoints = PatrolPoints;
-        segmentMovingTime = timeToMoveOnOneSegment;
         agent = gameObject.GetComponent<NavMeshAgent>();
-        agent.SetDestination(patrolPoints[1]);
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+        agent.SetDestination(patrolPoints[0]);
+        isForwardMoving = true;
     }
-    float timer = 0f;
-    int currentSegment = 0, startInd = 0, endInd = 1;
+
+    int currentSegment = 0, endInd = 1;
     bool isForwardMoving = true;
     public void PatrolMoving()
     {
-        timer += Time.deltaTime;
-        float t = timer / segmentMovingTime;
-        //_transform.position = Vector3.Lerp(patrolPoints[startInd], patrolPoints[endInd], t);
-        if (t > 1f)
+        if (agent.remainingDistance < 0.05f)
         {
             currentSegment += isForwardMoving ? 1 : -1;
 
-            if (currentSegment >= patrolPoints.Length - 1)
+            if (isForwardMoving && currentSegment >= patrolPoints.Length)
             {
 
                 currentSegment = patrolPoints.Length - 2;
                 isForwardMoving = false;
-                timer = 0f;
             }
-            if (currentSegment <= -1)
+            if (!isForwardMoving && currentSegment <= -1)
             {
                 currentSegment = 0;
                 isForwardMoving = true;
-                timer = 0f;
             }
-            startInd = isForwardMoving ? currentSegment : currentSegment + 1;
+            //startInd = isForwardMoving ? currentSegment : currentSegment + 1;
             endInd = isForwardMoving ? currentSegment + 1 : currentSegment;
-            agent.SetDestination(patrolPoints[endInd]);
+            agent.SetDestination(patrolPoints[currentSegment]);
         }
 
     }
