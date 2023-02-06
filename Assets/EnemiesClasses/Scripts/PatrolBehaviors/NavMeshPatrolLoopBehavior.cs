@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,6 +8,7 @@ public class NavMeshPatrolLoopBehavior : IPatrolable
     NavMeshAgent agent;
     Transform _transform;
     Vector3[] patrolPoints;
+    bool correctInitialize = true;
     public NavMeshPatrolLoopBehavior(GameObject gameObject)
     {
         _object = gameObject;
@@ -22,13 +24,22 @@ public class NavMeshPatrolLoopBehavior : IPatrolable
     }
     public NavMeshPatrolLoopBehavior(GameObject gameObject, Vector3[] PatrolPoints)
     {
-        _object = gameObject;
-        _transform = gameObject.transform;
-        patrolPoints = PatrolPoints;
-        agent = gameObject.GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
-        agent.SetDestination(patrolPoints[0]);
+        try
+        {
+            _object = gameObject;
+            _transform = gameObject.transform;
+            patrolPoints = PatrolPoints;
+            agent = gameObject.GetComponent<NavMeshAgent>();
+            agent.updateRotation = false;
+            agent.updateUpAxis = false;
+            agent.SetDestination(patrolPoints[0]);
+        }
+        catch (IndexOutOfRangeException)
+        {
+            correctInitialize = false;
+            UnityEngine.Debug.LogError("The array of enemy(" + gameObject.name + ") patrol positions cannot be empty");
+        }
+
     }
 
     int currentSegment = 0;
@@ -42,7 +53,8 @@ public class NavMeshPatrolLoopBehavior : IPatrolable
             {
                 currentSegment = 0;
             }
-            agent.SetDestination(patrolPoints[currentSegment]);
+            if (correctInitialize)
+                agent.SetDestination(patrolPoints[currentSegment]);
         }
 
     }

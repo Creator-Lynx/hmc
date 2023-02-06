@@ -11,7 +11,7 @@ public class SimpleEnemy : Enemy
         damagable = new SimpleDamagable(gameObject);
         Vector3[] points = new Vector3[wayPoints.Length];
         for (int i = 0; i < wayPoints.Length; i++) { points[i] = wayPoints[i].position; }
-        patrolable = new NavMeshPatrolLoopBehavior(gameObject, points);
+        patrolable = new NavMeshPatrolPingPongBehavior(gameObject, points);
         searchable = new OldSearch(transform);
         shootable = new OldShoot(transform, bulletPrefab);
     }

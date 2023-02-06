@@ -1,3 +1,5 @@
+using System;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,6 +9,8 @@ public class NavMeshPatrolPingPongBehavior : IPatrolable
     NavMeshAgent agent;
     Transform _transform;
     Vector3[] patrolPoints;
+    bool isForwardMoving = true;
+    bool correctInitialize = true;
     public NavMeshPatrolPingPongBehavior(GameObject gameObject)
     {
         _object = gameObject;
@@ -23,18 +27,27 @@ public class NavMeshPatrolPingPongBehavior : IPatrolable
     }
     public NavMeshPatrolPingPongBehavior(GameObject gameObject, Vector3[] PatrolPoints)
     {
-        _object = gameObject;
-        _transform = gameObject.transform;
-        patrolPoints = PatrolPoints;
-        agent = gameObject.GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
-        agent.SetDestination(patrolPoints[0]);
-        isForwardMoving = true;
+        try
+        {
+            _object = gameObject;
+            _transform = gameObject.transform;
+            patrolPoints = PatrolPoints;
+            agent = gameObject.GetComponent<NavMeshAgent>();
+            agent.updateRotation = false;
+            agent.updateUpAxis = false;
+
+            isForwardMoving = true;
+            agent.SetDestination(patrolPoints[0]);
+        }
+        catch (IndexOutOfRangeException)
+        {
+            correctInitialize = false;
+            UnityEngine.Debug.LogError("The array of enemy(" + gameObject.name + ") patrol positions cannot be empty");
+        }
     }
 
     int currentSegment = 0, endInd = 1;
-    bool isForwardMoving = true;
+
     public void PatrolMoving()
     {
         if (agent.remainingDistance < 0.05f)
@@ -54,7 +67,8 @@ public class NavMeshPatrolPingPongBehavior : IPatrolable
             }
             //startInd = isForwardMoving ? currentSegment : currentSegment + 1;
             endInd = isForwardMoving ? currentSegment + 1 : currentSegment;
-            agent.SetDestination(patrolPoints[currentSegment]);
+            if (correctInitialize)
+                agent.SetDestination(patrolPoints[currentSegment]);
         }
 
     }
