@@ -4282,6 +4282,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3933795079261133782, guid: 187009557a455384a9d11518ff9a43f2, type: 3}
+      propertyPath: speed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933795079261133782, guid: 187009557a455384a9d11518ff9a43f2, type: 3}
+      propertyPath: timeToMaxSpeed
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933795079261133782, guid: 187009557a455384a9d11518ff9a43f2, type: 3}
+      propertyPath: startCurve.m_Curve.Array.data[1].inSlope
+      value: 0.46444374
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933795079261133782, guid: 187009557a455384a9d11518ff9a43f2, type: 3}
+      propertyPath: startCurve.m_Curve.Array.data[1].inWeight
+      value: 0.86641526
+      objectReference: {fileID: 0}
     - target: {fileID: 3933795079525844525, guid: 187009557a455384a9d11518ff9a43f2, type: 3}
       propertyPath: m_Layer
       value: 6
