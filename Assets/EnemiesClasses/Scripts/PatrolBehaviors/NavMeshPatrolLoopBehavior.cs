@@ -30,8 +30,8 @@ public class NavMeshPatrolLoopBehavior : IPatrolable
             _transform = gameObject.transform;
             patrolPoints = PatrolPoints;
             agent = gameObject.GetComponent<NavMeshAgent>();
-            agent.updateRotation = false;
-            agent.updateUpAxis = false;
+            //agent.updateRotation = false;
+            //agent.updateUpAxis = false;
             agent.SetDestination(patrolPoints[0]);
         }
         catch (IndexOutOfRangeException)

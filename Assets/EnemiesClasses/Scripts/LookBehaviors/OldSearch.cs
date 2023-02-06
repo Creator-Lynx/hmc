@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class OldSearch : ISearchable
+public class OldSearch : ILookable
 {
     Collider2D closerEnemy;
     Transform _transform;

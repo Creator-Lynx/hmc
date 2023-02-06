@@ -4,7 +4,7 @@ public class Enemy : MonoBehaviour
 {
     protected IDamagable damagable;
     protected IPatrolable patrolable;
-    protected ISearchable searchable;
+    protected ILookable lookable;
     protected IFollowable followable;
     protected IShootable shootable;
 
