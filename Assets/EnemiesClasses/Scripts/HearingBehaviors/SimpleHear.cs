@@ -18,4 +18,5 @@ public class SimpleHear : IHearable
         }
 
     }
+    public Vector3 GetPosition() => _owner.transform.position;
 }
