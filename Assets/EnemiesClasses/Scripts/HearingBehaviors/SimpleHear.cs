@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleHear : MonoBehaviour
+public class SimpleHear : IHearable
 {
-    // Start is called before the first frame update
-    void Start()
+    Enemy _owner;
+    int _reactionLoud;
+    public SimpleHear(Enemy owner, int reactionLoud)
     {
-        
+        _owner = owner;
+        _reactionLoud = reactionLoud;
     }
-
-    // Update is called once per frame
-    void Update()
+    public void HearReaction(Vector3 soundPosition, int loud)
     {
-        
+        if (loud >= _reactionLoud)
+        {
+            Vector3[] points = { (soundPosition - Vector3.left), soundPosition };
+            _owner.patrolable = new NavMeshPatrolPingPongBehavior(_owner.gameObject, points);
+        }
+
     }
 }

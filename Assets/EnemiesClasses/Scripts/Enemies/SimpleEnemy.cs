@@ -14,6 +14,7 @@ public class SimpleEnemy : Enemy
         patrolable = new NavMeshPatrolLoopBehavior(gameObject, points);
         lookable = new OldSearch(transform);
         shootable = new OldShoot(transform, bulletPrefab);
+        hearable = new SimpleHear(this, 4);
     }
 
     bool patrolIsChanged = false;
