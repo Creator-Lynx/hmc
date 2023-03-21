@@ -15,8 +15,9 @@ public class NavMeshPatrolPingPongBehavior : IPatrolable
     {
         _object = gameObject;
         agent = gameObject.GetComponent<NavMeshAgent>();
-        //agent.updateRotation = false;
+        agent.updateRotation = false;
         agent.updateUpAxis = false;
+        agent.speed = 3.5f;
         _transform = gameObject.transform;
         patrolPoints = new Vector3[2]{
             _transform.position + new Vector3(-2, 0, 0),
@@ -33,7 +34,7 @@ public class NavMeshPatrolPingPongBehavior : IPatrolable
             _transform = gameObject.transform;
             patrolPoints = PatrolPoints;
             agent = gameObject.GetComponent<NavMeshAgent>();
-            agent.updateRotation = false;
+            agent.updateRotation = true;
             agent.updateUpAxis = false;
 
             isForwardMoving = true;

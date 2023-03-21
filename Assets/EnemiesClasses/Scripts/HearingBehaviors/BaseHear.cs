@@ -25,7 +25,7 @@ public class BaseHear : IHearable
                                  (soundPosition + 1.5f * Vector3.down),
                                  (soundPosition + 1.5f * Vector3.left),
                                  (soundPosition + 1.5f * Vector3.up) };
-            _owner.patrolable = new NavMeshPatrolLoopBehavior(_owner.gameObject, points);
+            _owner.patrolable = new NavMeshPatrolLoopBehavior(_owner.gameObject, points, 1.5f);
         }
 
     }

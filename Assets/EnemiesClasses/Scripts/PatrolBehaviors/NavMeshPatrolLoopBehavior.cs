@@ -22,14 +22,23 @@ public class NavMeshPatrolLoopBehavior : IPatrolable
         };
         agent.SetDestination(patrolPoints[0]);
     }
-    public NavMeshPatrolLoopBehavior(GameObject gameObject, Vector3[] PatrolPoints)
+    /// <summary>
+    /// speed less than 0 mean standard prefab navMesh speed.
+    /// </summary>
+    /// <param name="gameObject"></param>
+    /// <param name="PatrolPoints"></param>
+    /// <param name="speed"></param>
+    public NavMeshPatrolLoopBehavior(GameObject gameObject, Vector3[] PatrolPoints, float speed = -1)
     {
         try
         {
             _object = gameObject;
             _transform = gameObject.transform;
             patrolPoints = PatrolPoints;
+
             agent = gameObject.GetComponent<NavMeshAgent>();
+            agent.updateRotation = true;
+            if (speed > -1) agent.speed = speed;
             //agent.updateRotation = false;
             //agent.updateUpAxis = false;
             agent.SetDestination(patrolPoints[0]);

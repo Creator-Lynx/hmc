@@ -16,7 +16,8 @@ public class Shooting : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (CurrentInput.currentInputType == InputType.pcKeyboard) HandleRotate();
+        if (CurrentInput.currentInputType == InputType.pcKeyboard)
+            HandleRotate();
         else
         {
             GetEnemies();
@@ -97,6 +98,7 @@ public class Shooting : MonoBehaviour
         {
             CreateBullet(top.transform.up);
         }
+        GameSoundSystem.MakeSound(transform.position, 10, 7);
     }
     void CreateBullet(Vector2 direction)
     {

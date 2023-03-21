@@ -12,7 +12,7 @@ public class SimpleEnemy : Enemy
         Vector3[] points = new Vector3[wayPoints.Length];
         for (int i = 0; i < wayPoints.Length; i++) { points[i] = wayPoints[i].position; }
         patrolable = new NavMeshPatrolLoopBehavior(gameObject, points);
-        lookable = new OldSearch(transform);
+        lookable = new SpecterLook(transform, 10, 1.4f);
         shootable = new OldShoot(transform, bulletPrefab);
         hearable = new BaseHear(this, 1);
     }
