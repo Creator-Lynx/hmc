@@ -8,8 +8,9 @@ public class BaseHear : IHearable
     {
         _owner = owner;
         _reactionLoud = reactionLoud;
+        GameSoundSystem.hearables.AddListener(HearReaction);
     }
-    public void HearReaction(Vector3 soundPosition, int inputLoud, int soundDistance)
+    public virtual void HearReaction(Vector3 soundPosition, int inputLoud, int soundDistance)
     {
         float dist = (_owner.transform.position - soundPosition).magnitude;
         int loud = 0;
@@ -19,7 +20,7 @@ public class BaseHear : IHearable
         }
         if (loud >= _reactionLoud)
         {
-            Vector3[] points = { (soundPosition - Vector3.left), soundPosition };
+            Vector3[] points = { (soundPosition + Vector3.right), soundPosition };
             _owner.patrolable = new NavMeshPatrolPingPongBehavior(_owner.gameObject, points);
         }
 
