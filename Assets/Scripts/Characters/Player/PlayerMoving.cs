@@ -31,19 +31,19 @@ public class PlayerMoving : MonoBehaviour
     /// <param name="direction"></param>
     public void Move(Vector2 direction)
     {
-        //rb.velocity = Vector3.Slerp(Vector3.zero, direction * speed, timer / timeToMaxSpeed);
+        rb.velocity = Vector3.Slerp(Vector3.zero, direction * speed, timer / timeToMaxSpeed);
         //rb.AddForce(direction * speed * Time.deltaTime, ForceMode2D.Impulse);
         _currentDirection = Vector2.Lerp(_currentDirection, direction, botRotateLerpSpeed * Time.deltaTime);
-        Vector2 targetMove = _currentDirection * speed * Time.deltaTime;
+        //Vector2 targetMove = _currentDirection * speed * Time.deltaTime;
         //rb.MovePosition((Vector2)transform.position + Vector2.Lerp(Vector2.zero, targetMove, startCurve.Evaluate(timer / timeToMaxSpeed)));
-        rb.MovePosition((Vector2)transform.position + targetMove);
-        if (direction.magnitude < 0.1f)
+        //rb.MovePosition((Vector2)transform.position + targetMove);
+        if (direction.magnitude < 0.01f)
         {
-            //rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, 10 * Time.deltaTime);
-            targetMove = _currentDirection * speed * Time.deltaTime;
+            rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, 10 * Time.deltaTime);
+            // targetMove = _currentDirection * speed * Time.deltaTime;
             //rb.MovePosition((Vector2)transform.position +
             // Vector2.Lerp(targetMove, Vector2.zero, stopCurve.Evaluate(backTimer / timeToNullSpeed)));
-            rb.MovePosition((Vector2)transform.position + targetMove);
+            //rb.MovePosition((Vector2)transform.position + targetMove);
             anim.isWalk = false;
             timer = 0f;
             backTimer += Time.deltaTime;
