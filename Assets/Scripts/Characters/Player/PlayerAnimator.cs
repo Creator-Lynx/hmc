@@ -54,11 +54,12 @@ public class PlayerAnimator : MonoBehaviour
         if (other.gameObject.name == "HelmetDown")
         {
             HelmetChange();
-
+            other.gameObject.SetActive(false);
         }
         if (other.gameObject.name == "GunUp")
         {
             animator.SetTrigger("takeGun");
+            other.gameObject.SetActive(false);
         }
     }
 }
