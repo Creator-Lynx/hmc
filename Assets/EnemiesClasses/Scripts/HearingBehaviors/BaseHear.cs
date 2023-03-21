@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class BaseHear : IHearable
 {
-    Enemy _owner;
-    int _reactionLoud;
+    protected Enemy _owner;
+    protected int _reactionLoud;
     public BaseHear(Enemy owner, int reactionLoud)
     {
         _owner = owner;
