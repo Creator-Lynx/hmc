@@ -1,13 +1,21 @@
-using System.Net.NetworkInformation;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Sounder : MonoBehaviour
+public class TestSounder : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        GameSoundSystem.MakeSound(transform.position, 4, 4);
+        StartCoroutine(SoundCor());
     }
 
-
+    IEnumerator SoundCor()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(2f);
+            GameSoundSystem.MakeSound(transform.position, 4, 4);
+        }
+    }
 }
