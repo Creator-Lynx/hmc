@@ -1,16 +1,22 @@
 using UnityEngine;
 
-public class SimpleHear : IHearable
+public class BaseHear : IHearable
 {
     Enemy _owner;
     int _reactionLoud;
-    public SimpleHear(Enemy owner, int reactionLoud)
+    public BaseHear(Enemy owner, int reactionLoud)
     {
         _owner = owner;
         _reactionLoud = reactionLoud;
     }
-    public void HearReaction(Vector3 soundPosition, int loud)
+    public void HearReaction(Vector3 soundPosition, int inputLoud, int soundDistance)
     {
+        float dist = (_owner.transform.position - soundPosition).magnitude;
+        int loud = 0;
+        if (dist <= soundDistance)
+        {
+            loud = inputLoud * (int)(dist / soundDistance);
+        }
         if (loud >= _reactionLoud)
         {
             Vector3[] points = { (soundPosition - Vector3.left), soundPosition };
@@ -18,5 +24,4 @@ public class SimpleHear : IHearable
         }
 
     }
-    public Vector3 GetPosition() => _owner.transform.position;
 }
